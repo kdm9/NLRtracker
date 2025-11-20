@@ -172,7 +172,7 @@ fi
 # 4. NLR_extractor.R
 if [ -f $interpro_result -a -f $FIMO_result ]; then
   echo -e "\nRun NLRtracker"
-  Rscript --vanilla ${dir_name}/module/NLRtracker.R ${Int_Desc:-"${dir_name}/module/InterProScan 5.53-87.0.list"} $interpro_result $FIMO_result ${fasta} $outdir ${Seqtype:-"p"} $hmmer_result $"${dir_name}/module/iTOL_NLR_template.txt"
+  Rscript --no-load --no-save ${dir_name}/module/NLRtracker.R ${Int_Desc:-"${dir_name}/module/InterProScan 5.53-87.0.list"} $interpro_result $FIMO_result ${fasta} $outdir ${Seqtype:-"p"} $hmmer_result $"${dir_name}/module/iTOL_NLR_template.txt"
   echo -e "\nFinish NLRtracker!"
   rm -rf ${outdir}tmp.fasta
 else
